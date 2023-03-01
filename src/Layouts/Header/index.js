@@ -1,7 +1,7 @@
 import React from "react";
-import {Link, NavLink} from "react-router-dom";
-import {makeStyles} from "@mui/styles";
-import {Container, Typography} from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
+import { Container, Typography } from "@mui/material";
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
 		"& .header": {
 			"& .browse-category": {
 				position: "relative",
-				paddingRight: theme.spacing(4),
-				marginRight: theme.spacing(4),
+				paddingRight: theme.spacing(17),
+				marginRight: theme.spacing(17),
 				"&::before": {
 					content: "''",
 					position: "absolute",
@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
 						position: "relative",
 						"& .category-label": {
 							transition: theme.transitions.easing.easeOut,
-							padding: theme.spacing(2),
+							padding: theme.spacing(0.5),
+							fontSize: "22px",
 							color: theme.palette.text.gray,
 							"&:hover": {
 								color: "#fff",
@@ -115,15 +116,15 @@ const useStyles = makeStyles((theme) => ({
 														color: theme.palette.secondary.main,
 													},
 												},
-											},	
-									
+											},
+
 										},
 										"&:hover": {
 											"& .menu-line-child": {
 												display: "block",
 											},
 										},
-									},		
+									},
 								},
 								"&:hover": {
 									"& .menu-line": {
@@ -146,7 +147,7 @@ const useStyles = makeStyles((theme) => ({
 						listStyle: "none",
 						display: "inline-block",
 						"&:not(:last-child)": {
-							marginRight: theme.spacing(4),
+							marginRight: theme.spacing(13),
 						},
 						"& a": {
 							color: theme.palette.text.gray,
@@ -272,66 +273,66 @@ const Header = (data) => {
 
 	return (
 		<>
-			<MobileMenu menu={menu}/>
-			<TopHeader cartItems = {data?.cartItems}/>
+			<MobileMenu menu={menu} />
+			<TopHeader cartItems={data?.cartItems} />
 			<header className={classes.root}>
 				<Container className="header">
 					<Typography component="div" className="divider" display="flex" alignItems="center"
-					            justifyContent="center">
+						justifyContent="center">
 						<div className="browse-category">
 							<ul className="main-menu">
 								<li className="menu-item">
 									<Typography className="category-label" variant="span" display="flex" alignItems="center">
-										<MenuRoundedIcon sx={{mr: 1}}/>
+										<MenuRoundedIcon sx={{ mr: 1 }} />
 										Browse Categories
-										<KeyboardArrowDownRoundedIcon sx={{ml: 1}}/>
+										<KeyboardArrowDownRoundedIcon sx={{ ml: 1 }} />
 									</Typography>
 									<ul className="sub-menu">
 										{
-											data?.categories && data?.categories?.map((item, i) =>{
-												return(
-													<li className="sub-menu-item" key ={i}>
-															<Typography component="span" className="menu-item-link" sx={{display: "flex !important"}}
-																		alignItems="center" justifyContent="space-between">
-																{item?.name}
-																<KeyboardArrowRightRoundedIcon fontSize="small"/>
-															</Typography>
-															<ul className="menu-line" key={i}>
-																{
-																	item?.subCategories && item?.subCategories?.map((subCategory, i) =>{
-																		return(
-																			<li className="menu-line-item" key={i}>
-																				<Link to="#" className="menu-line-link">
-																					<Typography component="span"  sx={{display: "flex !important"}}
-																							alignItems="center" justifyContent="space-between">
-																						{subCategory?.name}
-																						<KeyboardArrowRightRoundedIcon fontSize="small"/>
-																					</Typography>
-																				</Link>
-																				<ul className="menu-line-child" key={i}>
-																					{
-																						subCategory?.childCategories && subCategory?.childCategories?.map((child, index) =>{
-																							return(
-																								<li className="menu-line-item-child"  key={i}>
-																									<Link to="#" className="menu-line-link-child">
-																									<Typography component="span"  sx={{display: "flex !important"}}
-																							alignItems="center" justifyContent="space-between">
-																						{child?.name}
-																						
-																					</Typography>
-																										
-																									</Link>
-																								</li>
-																							)
-																						})
-																					}
-																				</ul>
+											data?.categories && data?.categories?.map((item, i) => {
+												return (
+													<li className="sub-menu-item" key={i}>
+														<Typography component="span" className="menu-item-link" sx={{ display: "flex !important" }}
+															alignItems="center" justifyContent="space-between">
+															{item?.name}
+															<KeyboardArrowRightRoundedIcon fontSize="small" />
+														</Typography>
+														<ul className="menu-line" key={i}>
+															{
+																item?.subCategories && item?.subCategories?.map((subCategory, i) => {
+																	return (
+																		<li className="menu-line-item" key={i}>
+																			<Link to="#" className="menu-line-link">
+																				<Typography component="span" sx={{ display: "flex !important" }}
+																					alignItems="center" justifyContent="space-between">
+																					{subCategory?.name}
+																					<KeyboardArrowRightRoundedIcon fontSize="small" />
+																				</Typography>
+																			</Link>
+																			<ul className="menu-line-child" key={i}>
+																				{
+																					subCategory?.childCategories && subCategory?.childCategories?.map((child, index) => {
+																						return (
+																							<li className="menu-line-item-child" key={i}>
+																								<Link to="#" className="menu-line-link-child">
+																									<Typography component="span" sx={{ display: "flex !important" }}
+																										alignItems="center" justifyContent="space-between">
+																										{child?.name}
 
-																			</li>
-																		)
-																	})
-																}
-															</ul>
+																									</Typography>
+
+																								</Link>
+																							</li>
+																						)
+																					})
+																				}
+																			</ul>
+
+																		</li>
+																	)
+																})
+															}
+														</ul>
 													</li>
 												)
 											})

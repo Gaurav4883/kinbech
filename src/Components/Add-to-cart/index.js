@@ -288,7 +288,7 @@ const AddToCart = (data) => {
         variant="contained"
         onClick={handleClickOpen}
         className="edit-btn">
-        <Badge color="secondary" badgeContent={cartItems?.length  ?? 0+ "+"}>
+        <Badge color="secondary" badgeContent={cartItems?.length ?? 0 + "+"}>
           <AddShoppingCartRoundedIcon />
         </Badge>
       </Button>

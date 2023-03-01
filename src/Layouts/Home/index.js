@@ -13,7 +13,7 @@ const Home = (data) => {
     <main>
       <ToastContainer />
       <HomeSlider
-        sliders={data?.home?.sliders} sliderCategories={data?.home?.sliderCategories}/>
+        sliders={data?.home?.sliders} sliderCategories={data?.home?.sliderCategories} />
       <Featured featuredCategories={data?.home?.featuredCategories} />
       <Exploring tags={data?.home?.tags} />
       <Category subCategories={data?.home?.subCategories} />

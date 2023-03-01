@@ -14,12 +14,12 @@ import AddToCart from "../../../Components/Add-to-cart";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		background: "#333",
+		background: "#2c5fc7",
 		padding: theme.spacing(2, 0),
 		"& .top-header": {
 			"& .top-content": {
 				"& .contact-info": {
-					lineHeight: 0,
+					lineHeight: 1.5,
 					"& ul": {
 						"& li": {
 							display: "inline-block",
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 							"& a": {
 								display: "flex",
 								alignItems: "center",
-								color: "#fff",
+								color: "#000000",
 								fontSize: theme.typography.h5,
 								transition: theme.transitions.easing.easeOut,
 								"& .MuiSvgIcon-root": {
@@ -45,12 +45,12 @@ const useStyles = makeStyles((theme) => ({
 				},
 				"& .login-text": {
 					"& a": {
-						color: "#fff",
+						color: "#000000",
 						fontWeight: theme.typography.fontWeightMedium,
-						fontSize: theme.typography.h5,
+						fontSize: "17px",
 						transition: theme.transitions.easing.easeOut,
 						"&:not(:last-child)": {
-							marginRight: theme.spacing(3),
+							marginRight: theme.spacing(4),
 						},
 						"&:hover": {
 							color: theme.palette.secondary.main,
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
 							maxHeight: "60px",
 							marginRight: theme.spacing(10),
 						},
+
 					},
 				},
 				"& .search-bar": {
@@ -75,10 +76,10 @@ const useStyles = makeStyles((theme) => ({
 						"& .MuiFormControl-root": {
 							"& .MuiInputBase-root": {
 								borderRadius: "30px",
-								color: "#fff",
+								color: "#000000",
 								fontFamily: "unset",
 								"& .MuiOutlinedInput-notchedOutline": {
-									borderColor: "#fff",
+									borderColor: "#333",
 								},
 							},
 							"& .MuiInputBase-input": {
@@ -89,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
 						"& .MuiButtonBase-root": {
 							position: "absolute",
 							left: "10px",
-							top: "50%",
+							top: "56%",
 							transform: "translateY(-50%)",
 							padding: 0,
 							minWidth: "unset",
@@ -102,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
 				"& .buttons-holder": {
 					"& .user-profile": {
 						"& a": {
-							color: "#fff",
+							color: "#333",
 							height: "40px",
 							width: "40px",
 							borderRadius: "50%",
@@ -119,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
 					},
 					"& .wish-list": {
 						"& a": {
-							color: "#fff",
+							color: "#333",
 							height: "40px",
 							width: "40px",
 							borderRadius: "50%",
@@ -135,23 +136,22 @@ const useStyles = makeStyles((theme) => ({
 						},
 					},
 					"& .add-to-cart": {
-						"& a": {
-							color: "#fff",
-							height: "40px",
-							width: "40px",
-							borderRadius: "50%",
-							background: "transparent",
-							display: "flex",
-							alignItems: "center",
-							justifyContent: "center",
-							transition: theme.transitions.easing.easeOut,
-							"&:hover": {
-								color: theme.palette.secondary.main,
-								background: "rgba(255, 255, 255, .25)",
-							},
+						color: "#000000",
+						height: "40px",
+						width: "40px",
+						borderRadius: "50%",
+						background: "transparent",
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						transition: theme.transitions.easing.easeOut,
+						"&:hover": {
+							color: theme.palette.secondary.main,
+							background: "rgba(255, 255, 255, .25)",
 						},
 					},
 				},
+
 			},
 		},
 		"@media(max-width:600px)": {
@@ -174,8 +174,10 @@ const TopHeader = (data) => {
 	return (
 		<section className={classes.root}>
 			<Container className="top-header">
+				{/* Main */}
 				<Typography component="div" className="top-content" display="flex" alignItems="center"
 					justifyContent="space-between">
+					{/* 1 */}
 					<Typography component="div" className="contact-info">
 						<ul>
 							<li>
@@ -191,6 +193,7 @@ const TopHeader = (data) => {
 								</a>
 							</li>
 						</ul>
+						{/* 1 */}
 					</Typography>
 
 					<Typography component="div" className="login-text" display="flex" alignItems="center">
@@ -201,11 +204,12 @@ const TopHeader = (data) => {
 							Register
 						</Link>
 					</Typography>
-
-
-
+					{/* Main */}
 				</Typography>
+
+
 				<Divider sx={{ my: 1, borderColor: "rgba(255, 255, 255, .25)", }} />
+				{/* Main2 */}
 				<Typography component="div" className="bottom-content" display="flex" alignItems="center"
 					justifyContent="space-between">
 					<Typography component="div" className="logo-holder">
@@ -216,21 +220,25 @@ const TopHeader = (data) => {
 					<Typography component="div" className="search-bar" px={4}>
 						<Box component="form" noValidate autoComplete="off">
 							<TextField id="search" type="search" name="search" variant="outlined"
-								placeholder="Search product..." fullWidth />
+								placeholder="Search Product..." fullWidth />
 							<Button variant="outlined" type="submit">
-								<SearchRoundedIcon />
+								<a href="" >
+									<SearchRoundedIcon />
+								</a>
 							</Button>
 						</Box>
 					</Typography>
 					<Typography component="div" className="buttons-holder" display="flex" alignItems="center" gap={3}>
 						{/* <Typography component="div" className="wish-list">
-							<WishList/>
+							<WishList />
 						</Typography> */}
 						<Typography component="div" className="add-to-cart">
 							<AddToCart cartItems={data?.cartItems} />
+
 						</Typography>
 						<UserProfile />
 					</Typography>
+					{/* Main2  */}
 				</Typography>
 			</Container>
 		</section>

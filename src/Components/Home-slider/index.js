@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import { makeStyles } from "@mui/styles";
 import { Button, Container, Grid, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
-import { CallApi } from "../Context/ApiContext";
+// import { CallApi } from "../Context/ApiContext";
 import { fileBaseUrl } from "../Context/ApiContext";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,8 +31,9 @@ const useStyles = makeStyles((theme) => ({
         },
         "& .home-slider": {
           "& .img-holder": {
-            height: "422px",
-            width: "100%",
+            height: "400px",
+            width: "90%",
+            marginLeft: "80px",
             borderRadius: theme.shape.borderRadius5,
             position: "relative",
             "&::before": {
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
               position: "absolute",
               left: "50px",
               bottom: "20px",
-              zIndex: 9,
+              zIndex: 1,
               "& .sub-title": {
                 color: theme.palette.text.light,
                 fontSize: theme.typography.h2,
@@ -187,7 +188,7 @@ const HomeSlider = (data) => {
   return (
     <section className={classes.root}>
       <Container>
-        <Grid container spacing={5}>
+        <Grid spacing={5}>
           <Grid item lg={8} md={8} sm={12}>
             <Slider {...settings}>
               {data?.sliders &&
@@ -226,50 +227,10 @@ const HomeSlider = (data) => {
                 })}
             </Slider>
           </Grid>
-          <Grid item lg={4} md={4} sm={12}>
-            <Grid container spacing={3}>
-              {data?.sliderCategories &&
-                data?.sliderCategories?.map((item, i) => {
-                  let id = item
-                  return (
-                    <Grid item lg={12} md={6} sm={6} key={i + "__"}>
-                      <Typography component="div" className="category-list">
-                        <Typography component="div" className="category-image">
-                          <Link to="/list" state={{id}}>
-                            <img
-                              src={ fileBaseUrl + "/category_thumbnail/" + item.thumbnailImage }
-                              alt={item.name}
-                              style={{ height: "180px", width: "100%" }}/>
-                            <Typography component="div" className="content-holder" >
-                              <Typography variant="h6" className="sub-title">
-                                {item.description}
-                              </Typography>
-                              <Typography variant="h2" className="title">
-                                {item.name}
-                              </Typography>
-                              {/* <Typography
-                              variant="h5"
-                              className="price"
-                              sx={{ mb: 1 }}>
-                              Save Rs.{item.price}
-                            </Typography> */}
-                              <Typography  component="div" className="button" display="flex">
-                                Shop Now
-                                <ArrowForwardRoundedIcon />
-                              </Typography>
-                            </Typography>
-                          </Link>
-                        </Typography>
-                      </Typography>
-                    </Grid>
-                  );
-                })}
-            </Grid>
-          </Grid>
         </Grid>
-      </Container>
-    </section>
-  );
+      </Container >
+    </section >
+  )
 };
 
 export default HomeSlider;
