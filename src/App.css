@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900;1000&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: rgb(244 246 248);
+}
+
+code {
+    font-family: 'Nunito', sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.MuiTypography-root, .MuiButtonBase-root {
+    font-family: unset !important;
+}
+
+.background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.MuiMenu-paper {
+    padding: 0;
+    border-radius: 15px !important;
+    min-width: 200px !important;
+}
+
+.MuiMenu-paper .MuiList-root:nth-child(1) a {
+    border-radius: 15px 15px 0 0;
+}
+
+.MuiMenu-paper .MuiList-root:last-child a {
+    border-radius: 0 0 15px 15px;
+}
+
+.MuiMenu-paper .MuiList-root {
+    padding: 0;
+}
+
+.MuiMenu-paper .MuiList-root a {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 1920px) {
+    .MuiContainer-root {
+        max-width: 1700px !important;
+    }
+}
+
+@media (min-width: 2550px) {
+    .MuiContainer-root {
+        max-width: 2350px !important;
+    }
+}
