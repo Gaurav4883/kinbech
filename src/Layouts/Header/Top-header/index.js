@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
 					width: "50%",
 					"& .MuiBox-root": {
 						position: "relative",
-						width: "100%",
+					width: "100%",
 						"& .MuiFormControl-root": {
 							"& .MuiInputBase-root": {
 								borderRadius: "30px",

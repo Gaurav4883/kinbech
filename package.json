@@ -21,7 +21,6 @@
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
-    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "react-toastify": "^9.1.1",
     "slick-carousel": "^1.8.1",
@@ -51,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
   }
 }

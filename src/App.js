@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Home from './Layouts/Home';
+import Home from './Layouts/Home'
 import {ThemeProvider} from '@mui/styles';
 import generateTheme from './Services/Generate-theme';
 import Header from "./Layouts/Header";
@@ -15,6 +15,10 @@ import Register from "./Components/Register";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CallApi } from './Components/Context/ApiContext';
+import ProductList from "./Components/Product-list";
+import Category from './Components/Category';
+import ContactDetail from './Components/Contact-detail';
+
 
 
 const App = () => {
@@ -43,6 +47,9 @@ const App = () => {
 						<Route path="/detail" element={<Detail/>}/>
 						<Route path="/buy-now" element={<BuyNow/>}/>
 						<Route path="/profile" element={<UserDashboard/>}/>
+						<Route path="/contact-us" element={<ContactDetail/>}/>
+						<Route path="/category" element={<Category subCategories={data?.home?.subCategories} />}/>
+						<Route path="/product" element={ <ProductList forYouProducts={data?.home?.forYouProducts} />}/>
 					</Routes>
 				</div>
 				<Footer/>
