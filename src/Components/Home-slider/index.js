@@ -205,6 +205,7 @@ const HomeSlider = (data) => {
                         <Typography component="div" className="content-holder">
                           <Typography variant="h6" className="sub-title">
                             {item.subTitle}
+
                           </Typography>
                           <Typography variant="h2" className="title">
                             {item.title}

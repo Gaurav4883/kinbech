@@ -17,9 +17,10 @@ const useStyles = makeStyles((theme) => ({
 		zIndex: 2,
 		"& .header": {
 			"& .browse-category": {
-				position: "relative",
-				paddingRight: theme.spacing(17),
-				marginRight: theme.spacing(17),
+				// position: "relative",
+				// paddingRight: theme.spacing(17),
+				// marginRight: theme.spacing(17),
+
 				"&::before": {
 					content: "''",
 					position: "absolute",
@@ -189,7 +190,7 @@ const menu = [
 	},
 	{
 		id: 2,
-		label: "Shop",
+		label: "Community",
 		slug: "/list",
 		menuChilds: [
 			{
@@ -205,7 +206,7 @@ const menu = [
 	},
 	{
 		id: 3,
-		label: "Product",
+		label: "Travels",
 		slug: "/product"
 	},
 	{
@@ -282,11 +283,11 @@ const Header = (data) => {
 						<div className="browse-category">
 							<ul className="main-menu">
 								<li className="menu-item">
-									<Typography className="category-label" variant="span" display="flex" alignItems="center">
+									{/* <Typography className="category-label" variant="span" display="flex" alignItems="center">
 										<MenuRoundedIcon sx={{ mr: 1 }} />
 										Browse Categories
 										<KeyboardArrowDownRoundedIcon sx={{ ml: 1 }} />
-									</Typography>
+									</Typography> */}
 									<ul className="sub-menu">
 										{
 											data?.categories && data?.categories?.map((item, i) => {
@@ -429,9 +430,9 @@ const Header = (data) => {
 								}
 							</Typography>
 						</Typography>
-					</Typography>
-				</Container>
-			</header>
+					</Typography >
+				</Container >
+			</header >
 		</>
 	)
 }
